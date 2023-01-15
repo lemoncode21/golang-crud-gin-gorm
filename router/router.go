@@ -2,7 +2,7 @@ package router
 
 import (
 	"golang-crud-gin/controller"
-	_ "golang-crud-gin/docs"
+
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -10,7 +10,6 @@ import (
 	ginSwagger "github.com/swaggo/gin-swagger"
 )
 
-// @title 	Tag Service API
 func NewRouter(tagsController *controller.TagsController) *gin.Engine {
 	router := gin.Default()
 	// add swagger
