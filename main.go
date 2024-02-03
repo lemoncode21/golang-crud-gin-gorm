@@ -15,12 +15,12 @@ import (
 	"github.com/rs/zerolog/log"
 )
 
-// @title 	Tag Service API
-// @version	1.0
-// @description A Tag service API in Go using Gin framework
+//	@title			Tag Service API
+//	@version		1.0
+//	@description	A Tag service API in Go using Gin framework
 
-// @host 	localhost:8888
-// @BasePath /api
+// @host		localhost:8888
+// @BasePath	/api
 func main() {
 
 	log.Info().Msg("Started Server!")
