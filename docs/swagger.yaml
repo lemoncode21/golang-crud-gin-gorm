@@ -31,7 +31,7 @@ paths:
         "200":
           description: OK
           schema:
-            type: obejct
+            $ref: '#/definitions/response.Response'
       summary: Get All tags.
       tags:
       - tags
