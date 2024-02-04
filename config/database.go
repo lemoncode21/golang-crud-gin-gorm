@@ -2,7 +2,7 @@ package config
 
 import (
 	"fmt"
-	"golang-crud-gin/helper"
+	"keeper-crud/helper"
 
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
@@ -12,8 +12,8 @@ const (
 	host     = "localhost"
 	port     = 5432
 	user     = "postgres"
-	password = "postgres"
-	dbName   = "test"
+	password = "0909"
+	dbName   = "keeper-crud-db"
 )
 
 func DatabaseConnection() *gorm.DB {

@@ -15,9 +15,9 @@ import (
 	"github.com/rs/zerolog/log"
 )
 
-//	@title			Tag Service API
+//	@title			Keeper API
 //	@version		1.0
-//	@description	A Tag service API in Go using Gin framework
+//	@description	A Keeper API in Go using Gin framework
 
 // @host		localhost:8888
 // @BasePath	/api
@@ -28,19 +28,23 @@ func main() {
 	db := config.DatabaseConnection()
 	validate := validator.New()
 
-	db.Table("tags").AutoMigrate(&model.Tags{})
+	err := db.Table("tags").AutoMigrate(&model.Tags{})
+	helper.ErrorPanic(err)
+	err = db.Table("users").AutoMigrate(&model.User{})
+	helper.ErrorPanic(err)
 
 	// Repository
 	tagsRepository := repository.NewTagsREpositoryImpl(db)
+	usersRepository := repository.NewUsersRepositoryImplementation(db)
 
 	// Service
-	tagsService := service.NewTagsServiceImpl(tagsRepository, validate)
+	mainService := service.NewService(tagsRepository, usersRepository, validate)
 
-	// Controller
-	tagsController := controller.NewTagsController(tagsService)
+	// Controllers
+	mainController := controller.NewController(&mainService.TagsService, &mainService.UsersService)
 
 	// Router
-	routes := router.NewRouter(tagsController)
+	routes := router.NewRouter(mainController.TagsController, mainController.UsersController)
 
 	server := &http.Server{
 		Addr:    ":8888",
