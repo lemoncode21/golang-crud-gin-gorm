@@ -2,9 +2,9 @@ package repository
 
 import (
 	"errors"
-	"golang-crud-gin/data/request"
-	"golang-crud-gin/helper"
-	"golang-crud-gin/model"
+	"keeper-crud/data/request"
+	"keeper-crud/helper"
+	"keeper-crud/model"
 
 	"gorm.io/gorm"
 )

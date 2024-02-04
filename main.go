@@ -1,14 +1,14 @@
 package main
 
 import (
-	"golang-crud-gin/config"
-	"golang-crud-gin/controller"
-	_ "golang-crud-gin/docs"
-	"golang-crud-gin/helper"
-	"golang-crud-gin/model"
-	"golang-crud-gin/repository"
-	"golang-crud-gin/router"
-	"golang-crud-gin/service"
+	"keeper-crud/config"
+	"keeper-crud/controller"
+	_ "keeper-crud/docs"
+	"keeper-crud/helper"
+	"keeper-crud/model"
+	"keeper-crud/repository"
+	"keeper-crud/router"
+	"keeper-crud/service"
 	"net/http"
 
 	"github.com/go-playground/validator/v10"

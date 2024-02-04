@@ -1,10 +1,10 @@
 package controller
 
 import (
-	"golang-crud-gin/data/request"
-	"golang-crud-gin/data/response"
-	"golang-crud-gin/helper"
-	"golang-crud-gin/service"
+	"keeper-crud/data/request"
+	"keeper-crud/data/response"
+	"keeper-crud/helper"
+	"keeper-crud/service"
 	"net/http"
 	"strconv"
 

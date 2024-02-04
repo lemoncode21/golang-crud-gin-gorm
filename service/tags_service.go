@@ -1,8 +1,8 @@
 package service
 
 import (
-	"golang-crud-gin/data/request"
-	"golang-crud-gin/data/response"
+	"keeper-crud/data/request"
+	"keeper-crud/data/response"
 )
 
 type TagsService interface {

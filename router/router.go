@@ -1,7 +1,7 @@
 package router
 
 import (
-	"golang-crud-gin/controller"
+	"keeper-crud/controller"
 
 	"net/http"
 
