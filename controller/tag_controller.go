@@ -22,7 +22,7 @@ func NewTagsController(service service.TagsService) *TagsController {
 	}
 }
 
-// CreateTags		godoc
+// Create CreateTags		godoc
 //
 //	@Summary		Create tags
 //	@Description	Save tags data in Db.
