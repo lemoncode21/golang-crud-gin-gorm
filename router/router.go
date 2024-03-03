@@ -1,8 +1,6 @@
 package router
 
 import (
-	"github.com/gin-contrib/sessions"
-	"github.com/gin-contrib/sessions/redis"
 	"keeper-crud/controller"
 
 	"net/http"
@@ -14,9 +12,6 @@ import (
 
 func NewRouter(tagsController *controller.TagsController, usersController *controller.UsersController) *gin.Engine {
 	router := gin.Default()
-	store, _ := redis.NewStore(10, "tcp", "localhost:6379", "", []byte("secret"))
-	var sessionNames []string
-	router.Use(sessions.SessionsMany(sessionNames, store))
 
 	// add swagger
 	router.GET("/docs/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))

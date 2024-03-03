@@ -36,3 +36,17 @@ func (u *UsersServiceImplementation) SignUp(user request.UserSignUpRequest) {
 	}
 	u.UsersRepository.SignUp(userModel)
 }
+
+func (u *UsersServiceImplementation) AuthenticateUser(email string, password string) (*model.User, error) {
+	user, err := u.UsersRepository.FindByEmail(email)
+	if err != nil {
+		return nil, err
+	}
+
+	err = bcrypt.CompareHashAndPassword([]byte(user.Password), []byte(password))
+	if err != nil {
+		return nil, err
+	}
+
+	return user, nil
+}
